@@ -1,2 +1,4 @@
-# CSE-122-Fall-2023
-This is an OOP Lab repo
+Name    : Tasneem Rahman 
+ID      : 22235103072
+INTAKE  : 51
+SECTION : 02
