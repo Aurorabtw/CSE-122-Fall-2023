@@ -1,0 +1,35 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int count_sure_problems(int n, const vector<vector<int>>& data) {
+    int count = 0;
+    for (int i = 0; i < n; i++) {
+        int sure_count = 0;
+        for (int j = 0; j < 3; j++) {
+            sure_count += data[i][j];
+        }
+        if (sure_count >= 2) {
+            count++;
+        }
+    }
+    return count;
+}
+
+int main() {
+    int n;
+    cin >> n; // Number of problems in the contest
+
+    vector<vector<int>> data(n, vector<int>(3));
+
+    for (int i = 0; i < n; i++) {
+        // Read the three integers (0 or 1) for each problem
+        cin >> data[i][0] >> data[i][1] >> data[i][2];
+    }
+
+    int result = count_sure_problems(n, data);
+    cout << result << endl;
+
+    return 0;
+}
