@@ -6,7 +6,7 @@ int main() {
     int w;
     cin >> w;
 
-    // Check if the watermelon can be divided into two parts, each weighing even kilos
+   
     if (w % 2 == 0 && w > 2) {
         cout << "YES" << endl;
     } else {
