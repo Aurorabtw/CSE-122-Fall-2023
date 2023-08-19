@@ -1,0 +1,32 @@
+#include <iostream>
+#include <algorithm>
+
+int main() {
+    std::string sum;
+    std::cin >> sum;
+
+    // Count the occurrences of each digit
+    int count[4] = {0}; // count[0] will not be used
+
+    for (char digit : sum) {
+        if (digit >= '1' && digit <= '3') {
+            count[digit - '0']++;
+        }
+    }
+
+    // Create the new sorted sum
+    std::string newSum;
+
+    for (int i = 1; i <= 3; ++i) {
+        for (int j = 0; j < count[i]; ++j) {
+            newSum += (char)('0' + i);
+            if (j < count[i] - 1) {
+                newSum += "+";
+            }
+        }
+    }
+
+    std::cout << newSum << std::endl;
+
+    return 0;
+}
