@@ -1,0 +1,36 @@
+#include <iostream>
+
+class Watermelon {
+private:
+    int weight;
+
+public:
+    Watermelon(int w) {
+        weight = w;
+    }
+
+    bool canDivideEvenly() {
+        if (weight < 4) {
+            return false;
+        } else if (weight % 2 == 0 && (weight / 2) % 2 == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+};
+
+int main() {
+    int w;
+    cout << "Enter the weight of the watermelon: ";
+    cin >> w;
+
+    Watermelon watermelon(w);
+
+    if (watermelon.canDivideEvenly()) {
+        cout << "YES" << endl;
+    } else {
+        cout << "NO" <<endl;
+    }
+    return 0;
+}
