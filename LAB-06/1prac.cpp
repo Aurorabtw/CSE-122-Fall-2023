@@ -1,20 +1,25 @@
 #include <iostream>
 #include <string>
-
-std::string capitalizeWord(const std::string& word) {
-    std::string capitalizedWord = word;
-    if (!word.empty()) {
-        capitalizedWord[0] = std::toupper(capitalizedWord[0]);
-    }
-    return capitalizedWord;
-}
+#include <unordered_set>
 
 int main() {
-    std::string inputWord;
-    std::cin >> inputWord;
+    std::string username;
+    std::cin >> username;
 
-    std::string capitalizedWord = capitalizeWord(inputWord);
-    std::cout << capitalizedWord << std::endl;
+    // Use an unordered set to count the number of distinct characters
+    std::unordered_set<char> distinctCharacters;
+
+    // Count the distinct characters
+    for (char c : username) {
+        distinctCharacters.insert(c);
+    }
+
+    // Check if the number of distinct characters is odd
+    if (distinctCharacters.size() % 2 == 0) {
+        std::cout << "CHAT WITH HER!" << std::endl;
+    } else {
+        std::cout << "IGNORE HIM!" << std::endl;
+    }
 
     return 0;
 }
